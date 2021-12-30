@@ -59,13 +59,16 @@ described above.
 
 local ffi = require "ffi"
 local bit = require "bit"
+local socket = require "socket"
+-- local t0 = socket.gettime()
 
 
 local ffi_new = ffi.new
 local ffi_sizeof = ffi.sizeof
 local ffi_cast = ffi.cast
 local ffi_fill = ffi.fill
-local ngx_now = ngx.now
+-- local ngx_now = ngx.now
+local ngx_now = socket.gettime
 local uintptr_t = ffi.typeof("uintptr_t")
 local c_str_t = ffi.typeof("const char*")
 local int_t = ffi.typeof("int")

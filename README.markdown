@@ -284,6 +284,23 @@ Prerequisites
 Installation
 ============
 
+brew install luajit-openresty
+
+If you need to have luajit-openresty first in your PATH, run:
+  echo 'export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"' >> /Users/moyong/.bash_profile
+
+For compilers to find luajit-openresty you may need to set:
+  export LDFLAGS="-L/usr/local/opt/luajit-openresty/lib"
+  export CPPFLAGS="-I/usr/local/opt/luajit-openresty/include"
+
+For pkg-config to find luajit-openresty you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/luajit-openresty/lib/pkgconfig"
+
+==> Summary
+🍺  /usr/local/Cellar/luajit-openresty/2.1-20210510: 38 files, 1.8MB
+
+
+
 It is recommended to use the latest [OpenResty release](https://openresty.org).
 At least OpenResty 1.4.2.9 is required. Recent versions of OpenResty only
 support LuaJIT, but if you are using an older version, make sure to enable

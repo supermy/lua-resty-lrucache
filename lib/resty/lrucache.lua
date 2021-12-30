@@ -1,12 +1,15 @@
 -- Copyright (C) Yichun Zhang (agentzh)
-
+local socket = require "socket"
+log = require "log"
 
 local ffi = require "ffi"
 local ffi_new = ffi.new
 local ffi_sizeof = ffi.sizeof
 local ffi_cast = ffi.cast
 local ffi_fill = ffi.fill
-local ngx_now = ngx.now
+-- local ngx_now = ngx.now
+local ngx_now = socket.gettime
+
 local uintptr_t = ffi.typeof("uintptr_t")
 local setmetatable = setmetatable
 local tonumber = tonumber
@@ -22,7 +25,7 @@ end
 
 
 if string.find(jit.version, " 2.0", 1, true) then
-    ngx.log(ngx.ALERT, "use of lua-resty-lrucache with LuaJIT 2.0 is ",
+    log.warn("use of lua-resty-lrucache with LuaJIT 2.0 is ",
                        "not recommended; use LuaJIT 2.1+ instead")
 end
 
