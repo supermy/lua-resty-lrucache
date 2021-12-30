@@ -284,7 +284,12 @@ Prerequisites
 Installation
 ============
 
+独立环境测试
+```
 brew install luajit-openresty
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+luajit myapp_test.lua 
+```
 
 If you need to have luajit-openresty first in your PATH, run:
   echo 'export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"' >> /Users/moyong/.bash_profile
