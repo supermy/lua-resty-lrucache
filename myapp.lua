@@ -19,7 +19,7 @@ function _M.go()
     print("dog: ", c:get("dog"))
     print("cat: ", c:get("cat"))
     
-    c:set("dog", { age = 10 }, 0.1)  -- expire in 0.1 sec  注意单位是毫秒
+    c:set("dog", { age = 10 }, 0.1)  -- expire in 0.1 sec  注意ttl单位是毫秒
     print("dog: ", c:get("dog").age)
     c:delete("dog")
     print("dog: ", c:get("dog"))
